@@ -115,7 +115,7 @@ const SETS: PracticeSet[] = [
       { id: 'roundabout-2', sign: 'roundabout', answer: 'Roundabout', options: ['Roundabout', 'Pedestrian crossing', 'No entry', 'Stop'] },
       { id: 'stop-3', sign: 'stop', answer: 'Stop', options: ['Yield', 'Stop', 'Keep left', 'Traffic signal'] },
       { id: 'yield-3', sign: 'yield', answer: 'Yield', options: ['No entry', 'Yield', 'Speed limit', 'Roundabout'] },
-      { id: 'speed-3', sign: 'speed
+      { id: 'speed-3', sign: 'speed'
 function SignIllustration({ type, large = false }: { type: SignType; large?: boolean }) {
   const label = {
     stop: 'Stop road sign',
