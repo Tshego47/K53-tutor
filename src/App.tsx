@@ -72,8 +72,6 @@ const EMPTY_PROGRESS: Progress = {
 
 const SETS: PracticeSet[] = [
   {
-    const SETS: PracticeSet[] = [
-  {
     id: 'starter',
     eyebrow: 'PDF p5-12',
     title: 'Controls & Basics',
