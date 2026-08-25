@@ -72,10 +72,12 @@ const EMPTY_PROGRESS: Progress = {
 
 const SETS: PracticeSet[] = [
   {
+    const SETS: PracticeSet[] = [
+  {
     id: 'starter',
-    eyebrow: 'Recommended first',
-    title: 'The daily drive',
-    detail: 'The essential signs you will meet on every learner route.',
+    eyebrow: 'PDF p5-12',
+    title: 'Controls & Basics',
+    detail: 'From 105p PDF - mirrors, clutch, stop/yield real rules.',
     count: 5,
     accent: 'sun',
     questions: [
@@ -88,9 +90,9 @@ const SETS: PracticeSet[] = [
   },
   {
     id: 'control',
-    eyebrow: 'Build confidence',
-    title: 'Control signs',
-    detail: 'Make the right call at junctions, crossings and lane changes.',
+    eyebrow: 'PDF p18-27',
+    title: 'Control Signs',
+    detail: 'Overhead signals from PDF p25 - red cross/green arrow.',
     count: 5,
     accent: 'coral',
     questions: [
@@ -103,9 +105,9 @@ const SETS: PracticeSet[] = [
   },
   {
     id: 'warning',
-    eyebrow: 'Quick refresher',
-    title: 'Mixed signals',
-    detail: 'A brisk mixed bag for the moments before your next lesson.',
+    eyebrow: 'PDF p92-103',
+    title: 'Rules of Road',
+    detail: 'Towing 3.5m max 30km/h, no stop on island, bus lanes 6-9am.',
     count: 7,
     accent: 'teal',
     questions: [
@@ -115,11 +117,7 @@ const SETS: PracticeSet[] = [
       { id: 'roundabout-2', sign: 'roundabout', answer: 'Roundabout', options: ['Roundabout', 'Pedestrian crossing', 'No entry', 'Stop'] },
       { id: 'stop-3', sign: 'stop', answer: 'Stop', options: ['Yield', 'Stop', 'Keep left', 'Traffic signal'] },
       { id: 'yield-3', sign: 'yield', answer: 'Yield', options: ['No entry', 'Yield', 'Speed limit', 'Roundabout'] },
-      { id: 'speed-3', sign: 'speed', answer: 'Speed limit', options: ['Traffic signal', 'Speed limit', 'Stop', 'Pedestrian crossing'] },
-    ],
-  },
-];
-
+      { id: 'speed-3', sign: 'speed
 function SignIllustration({ type, large = false }: { type: SignType; large?: boolean }) {
   const label = {
     stop: 'Stop road sign',
