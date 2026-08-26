@@ -5,6 +5,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
 import {
+  import { k53Questions } from './questions';
   ArrowRight,
   BookOpen,
   Check,
@@ -70,56 +71,6 @@ const EMPTY_PROGRESS: Progress = {
   lastSet: 'Not started',
 };
 
-const SETS: PracticeSet[] = [
-  {
-    id: 'starter',
-    eyebrow: 'Vehicle Controls',
-    title: 'Controls & Mirrors',
-    detail: 'Learn what clutch, mirrors and blind spots actually do before you drive.',
-    count: 5,
-    accent: 'sun',
-    questions: [
-      { id: 'mir-how-often', sign: 'stop', answer: 'Every 5 to 8 seconds', options: ['Every 5 to 8 seconds', 'Only when braking', 'Once every 10 minutes', 'Only at night'] },
-      { id: 'mir-when-adjust', sign: 'yield', answer: 'Only when the car is not moving', options: ['Only when the car is not moving', 'While driving on highway', 'When turning', 'Anytime'] },
-      { id: 'blind-how', sign: 'no-entry', answer: 'Turn your head to look', options: ['Turn your head to look', 'Honk your hooter', 'Look in rear-view only', 'No need to check'] },
-      { id: 'clutch-do', sign: 'traffic-light', answer: 'Disconnects engine to change gears', options: ['Disconnects engine to change gears', 'Stops the car', 'Steers the car', 'Makes car go faster'] },
-      { id: 'safe-to-move', sign: 'stop', answer: 'Check mirrors first', options: ['Check mirrors first', 'Accelerate immediately', 'Hoot first', 'Check wipers'] },
-    ],
-  },
-  {
-    id: 'control',
-    eyebrow: 'Traffic Signals',
-    title: 'Traffic Lights & Overhead Lanes',
-    detail: 'What to do at red lights and when a red cross or green arrow is above your lane.',
-    count: 6,
-    accent: 'coral',
-    questions: [
-      { id: 'red-disc-do', sign: 'stop', answer: 'Stop behind white line, wait for green', options: ['Stop behind white line, wait for green', 'Slow down and go', 'Yield to others', 'Proceed if clear'] },
-      { id: 'flash-red-do', sign: 'stop', answer: 'Treat as 4-way stop, give way to pedestrians', options: ['Treat as 4-way stop, give way to pedestrians', 'Speed up', 'Stop and go quickly', 'Ignore'] },
-      { id: 'over-red-cross', sign: 'no-entry', answer: 'You are NOT allowed in that lane', options: ['You are NOT allowed in that lane', 'You ARE allowed in that lane', 'Lane is closing ahead', 'Prepare to stop'] },
-      { id: 'over-green-arrow', sign: 'traffic-light', answer: 'You ARE allowed in that lane', options: ['You ARE allowed in that lane', 'You are NOT allowed in that lane', 'Stop', 'No overtaking'] },
-      { id: 'over-yellow-arrow', sign: 'roundabout', answer: 'Lane closed, move to next lane', options: ['Lane closed, move to next lane', 'You may stay in lane', 'Speed limit 60', 'Stop street ahead'] },
-      { id: 'flagman-stop', sign: 'stop', answer: 'Stay still until he signals you to go', options: ['Stay still until he signals you to go', 'Slow down and pass', 'Hoot and go', 'Turn around'] },
-    ],
-  },
-  {
-    id: 'warning',
-    eyebrow: 'Rules of the Road',
-    title: 'Speed, Towing & Parking',
-    detail: 'Real exam rules: speed limits, towing distance, and where you may not stop.',
-    count: 7,
-    accent: 'teal',
-    questions: [
-      { id: 'speed-town', sign: 'speed', answer: '60 km/h in towns', options: ['60 km/h in towns', '100 km/h in towns', '120 km/h in towns', '80 km/h in towns'] },
-      { id: 'speed-out', sign: 'speed', answer: '100 km/h outside towns', options: ['100 km/h outside towns', '60 km/h outside towns', '120 km/h outside towns', '80 km/h outside towns'] },
-      { id: 'speed-freeway', sign: 'speed', answer: '120 km/h on freeways', options: ['120 km/h on freeways', '100 km/h on freeways', '60 km/h on freeways', '160 km/h on freeways'] },
-      { id: 'tow-max-dist', sign: 'no-entry', answer: 'Rope/chain may not be longer than 3.5m', options: ['Rope/chain may not be longer than 3.5m', 'May be 10m long', 'May be 1m long only', 'May be 5m long'] },
-      { id: 'tow-flag-when', sign: 'no-entry', answer: 'If rope is longer than 1.8m, hang red flag', options: ['If rope is longer than 1.8m, hang red flag', 'If rope is longer than 3.5m, hang white flag', 'Never need a flag', 'Always need white flag'] },
-      { id: 'tow-max-speed', sign: 'speed', answer: '30 km/h unless you use a solid bar', options: ['30 km/h unless you use a solid bar', '60 km/h always', '120 km/h on freeway', '100 km/h always'] },
-      { id: 'where-no-stop', sign: 'stop', answer: 'On a painted island in the road', options: ['On a painted island in the road', 'Inside a marked parking bay', 'At a stop street', 'At a yield sign'] },
-    ],
-  },
-];
 
 function SignIllustration({ type, large = false }: { type: SignType; large?: boolean }) {
   const label = {
