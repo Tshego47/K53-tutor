@@ -5,7 +5,6 @@ import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
 import {
-  import { k53Questions } from './questions';
   ArrowRight,
   BookOpen,
   Check,
@@ -70,6 +69,56 @@ const EMPTY_PROGRESS: Progress = {
   streak: 0,
   lastSet: 'Not started',
 };
+
+// --- OFFICIAL EXAM QUESTIONS DATASET ---
+const SETS: PracticeSet[] = [
+  {
+    id: 'starter',
+    eyebrow: 'Vehicle Controls',
+    title: 'Controls & Mirrors',
+    detail: 'Learn what the clutch, mirrors, handbrake, and indicators officially do.',
+    count: 5,
+    accent: 'sun',
+    questions: [
+      { id: 'ctrl-clutch', sign: 'traffic-light', answer: 'Disconnects engine from the gearbox', options: ['Disconnects engine from the gearbox', 'Stops the vehicle immediately', 'Increases engine speed', 'Locks the steering wheel'] },
+      { id: 'ctrl-handbrake', sign: 'stop', answer: 'Keeps a parked vehicle stationary', options: ['Keeps a parked vehicle stationary', 'Assists in sharp high-speed turns', 'Reduces speed while driving down hills', 'Disengages the clutch automatically'] },
+      { id: 'ctrl-indicator', sign: 'yield', answer: 'Signals intentions to other road users', options: ['Signals intentions to other road users', 'Gives you automatic right of way', 'Increases visibility in heavy fog', 'Alerts passengers inside the car'] },
+      { id: 'ctrl-hooter', sign: 'no-entry', answer: 'Warns others of dangerous situations', options: ['Warns others of dangerous situations', 'Greets other drivers on public roads', 'Signals intention to overtake immediately', 'Expresses anger at reckless road users'] },
+      { id: 'ctrl-mirrors', sign: 'pedestrian', answer: 'Check them before changing directions', options: ['Check them before changing directions', 'Adjust them while driving on highways', 'Look only when applying foot brakes', 'Use them to watch rear passengers'] },
+    ],
+  },
+  {
+    id: 'control',
+    eyebrow: 'Traffic Signals',
+    title: 'Traffic Lights & Overhead Lanes',
+    detail: 'What to do at red lights and when a red cross or green arrow is above your lane.',
+    count: 6,
+    accent: 'coral',
+    questions: [
+      { id: 'red-disc-do', sign: 'stop', answer: 'Stop behind white line, wait for green', options: ['Stop behind white line, wait for green', 'Slow down and go', 'Yield to others', 'Proceed if clear'] },
+      { id: 'flash-red-do', sign: 'stop', answer: 'Treat as 4-way stop, give way to pedestrians', options: ['Treat as 4-way stop, give way to pedestrians', 'Speed up', 'Stop and go quickly', 'Ignore'] },
+      { id: 'over-red-cross', sign: 'no-entry', answer: 'You are NOT allowed in that lane', options: ['You are NOT allowed in that lane', 'You ARE allowed in that lane', 'Lane is closing ahead', 'Prepare to stop'] },
+      { id: 'over-green-arrow', sign: 'traffic-light', answer: 'You ARE allowed in that lane', options: ['You ARE allowed in that lane', 'You are NOT allowed in that lane', 'Stop', 'No overtaking'] },
+      { id: 'over-yellow-arrow', sign: 'roundabout', answer: 'Lane closed, move to next lane', options: ['Lane closed, move to next lane', 'You may stay in lane', 'Speed limit 60', 'Stop street ahead'] },
+      { id: 'flagman-stop', sign: 'stop', answer: 'Stay still until he signals you to go', options: ['Stay still until he signals you to go', 'Slow down and pass', 'Hoot and go', 'Turn around'] },
+    ],
+  },
+  {
+    id: 'warning',
+    eyebrow: 'Rules of the Road',
+    title: 'Speed, Towing & Parking',
+    detail: 'Real exam rules: speed limits, validity, and where you may not stop.',
+    count: 5,
+    accent: 'teal',
+    questions: [
+      { id: 'speed-town', sign: 'speed', answer: '60 km/h in urban areas', options: ['60 km/h in urban areas', '100 km/h in urban areas', '120 km/h in urban areas', '80 km/h in urban areas'] },
+      { id: 'speed-pedestrian', sign: 'speed', answer: '15 km/h in pedestrian zones', options: ['15 km/h in pedestrian zones', '20 km/h in pedestrian zones', '30 km/h in pedestrian zones', '40 km/h in pedestrian zones'] },
+      { id: 'learner-valid', sign: 'yield', answer: '24 months from issue date', options: ['24 months from issue date', '12 months from issue date', '6 months from issue date', 'Permanently valid'] },
+      { id: 'ped-crossing', sign: 'pedestrian', answer: 'Yield if pedestrian is entering crossing', options: ['Yield if pedestrian is entering crossing', 'Hoot to warn them to stop walking', 'Accelerate to pass before they cross', 'Ignore if they are on opposite side'] },
+      { id: 'where-no-stop', sign: 'stop', answer: 'On a painted island in the road', options: ['On a painted island in the road', 'Inside a marked parking bay', 'At a designated loading zone', 'On a gravel road shoulder'] },
+    ],
+  },
+];
 
 
 function SignIllustration({ type, large = false }: { type: SignType; large?: boolean }) {
